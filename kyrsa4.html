@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Integrals</title>
+    <meta charset="utf-8">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body>   
+<div class="container"> 
+    <div class="row row-cols-2">
+    <div class="col">
+<br>
+        Функция:<div class="item input">0</div>
+      <table>  
+<tr class="calc_buttons">
+ <td>
+      <div class="item" onclick="f('sin')">
+          <button type="button" style="width:40px; height:40px;">sin</button></div>
+    </td><td>
+      <div class="item" onclick="f('cos')">
+          <button type="button" style="width:40px; height:40px;">cos</button></div>
+    </td><td>
+      <div class="item" onclick="f('tan')">
+          <button type="button" style="width:40px; height:40px;">tg</button></div>
+    </td><td>
+      <div class="item" onclick="log('lg')">
+          <button type="button" style="width:40px; height:40px;">lg</button></div>
+    </td><td>
+      <div class="item" onclick="log('ln')">
+          <button type="button" style="width:40px; height:40px;">ln</button></div>
+    </td><td>
+      <div class="item" onclick="constant('pi')">
+          <button type="button" style="width:40px; height:40px;">pi</button></div>
+    </td><td>
+      <div class="item" onclick="constant('e')">
+          <button type="button" style="width:40px; height:40px;">e</button></div>
+    </td><td>
+      <div class="item clean" onclick="clean()">
+          <button type="button" style="width:40px; height:40px;">C</button></div>
+    </td><td>
+      <div class="item back" onclick="back()">
+          <button type="button" style="width:40px; height:40px;">CE</button></div>
+    </td>
+</tr>
+<br>
+
+<tr class="calc_buttons">
+<td>
+      <div class="item divide" onclick="insert('/')">
+          <button type="button" style="width:40px; height:40px;">/</button></div>
+      </td><td>
+      <div class="item mul" onclick="insert('*')">
+          <button type="button" style="width:40px; height:40px;">*</button></div>
+      </td><td> 
+      <div class="item add" onclick="insert('+')">
+          <button type="button" style="width:40px; height:40px;">+</button></div>
+      </td><td>   
+      <div class="item sub" onclick="insert('-')">
+          <button type="button" style="width:40px; height:40px;">-</button></div>
+      </td><td>
+      <div class="item" onclick="insert('(')">
+          <button type="button" style="width:40px; height:40px;">(</button></div>
+    </td><td>
+      <div class="item" onclick="insert(')')">
+          <button type="button" style="width:40px; height:40px;">)</button></div>
+      </td><td>
+      <div class="item" onclick="insert('.')">
+          <button type="button" style="width:40px; height:40px;">,</button></div>
+    </td><td>    <div class="item" onclick="insert('x')">
+          <button type="button" style="width:40px; height:40px;">X</button></div>
+    </td><td>
+      <div class="item zero" onclick="insert('0')">
+          <button type="button" style="width:40px; height:40px;">0</button></div>
+    </td>
+</tr>
+<br>
+       
+<tr class="calc_buttons">
+<td>
+      <div class="item" onclick="insert('1')">
+          <button type="button" style="width:40px; height:40px;">1</button></div>
+    </td><td> 
+      <div class="item" onclick="insert('2')">
+          <button type="button" style="width:40px; height:40px;">2</button></div>
+    </td><td>  
+      <div class="item" onclick="insert('3')">
+          <button type="button" style="width:40px; height:40px;">3</button></div>
+    </td><td>
+      <div class="item" onclick="insert('4')">
+          <button type="button" style="width:40px; height:40px;">4</button></div>
+    </td><td>
+      <div class="item" onclick="insert('5')">
+          <button type="button" style="width:40px; height:40px;">5</button></div>
+    </td><td> 
+      <div class="item" onclick="insert('6')">
+          <button type="button" style="width:40px; height:40px;">6</button></div>
+    </td><td>
+      <div class="item" onclick="insert('7')">  
+          <button type="button" style="width:40px; height:40px;">7</button></div>
+    </td><td>
+      <div class="item" onclick="insert('8')">
+          <button type="button" style="width:40px; height:40px;">8</button></div>
+    </td><td>
+      <div class="item" onclick="insert('9')">
+          <button type="button" style="width:40px; height:40px;">9</button></div>
+    </td>
+</tr>
+<br>         
+     </table>
+<br>
+        <div class="item equal" onclick="equal()">
+            <button type="button" style="width:377px; height:40px;" id="knopka">Построить</button>
+        </div>
+<br>
+        Результат по методу Монте-Карло:<p id = "result1"></p>
+        <canvas id='canvas_example1' width = "400px" height = "200px" style = "border:solid 2px black; width: 100%;">
+        </canvas>
+<br>
+<br>
+        Результат по методу правых прямоугольников:<p id = "result3"></p>
+        <canvas id='canvas_example3' width = "400px" height = "200px" style = "border:solid 2px black; width: 100%;">
+        </canvas>
+
+    </div>
+    <div class="col">
+<br>
+<br>
+        Количесво точек: <input type="text" style="width:237px; height:30px;" value="0" id="qual">
+<br>
+<br>
+<br>
+        Нижний предел: <input type="text" style="width:245px; height:30px;" value="0" id="a1">
+<br>
+<br>
+<br>
+        Верхний предел: <input type="text" style="width:240px; height:30px;" value="0" id="b1">
+<br>
+<br>
+<br>
+        Разбиение: <input type="text" style="width:282px; height:30px;" value="0" id="qual2">
+<br>
+<br>
+<br>
+        Результат по методу трапеций:<p id = "result2"></p>
+        <canvas id='canvas_example2' width = "400px" height = "200px" style = "border:solid 2px black; width: 100%;">
+        </canvas>
+<br>
+<br>
+        Результат по методу левых прямоугольников:<p id = "result4"></p>
+        <canvas id='canvas_example4' width = "400px" height = "200px" style = "border:solid 2px black; width: 100%;">
+        </canvas>
+        </div>
+    <div class="col">
+<br>
+        Результат по методу средних прямоугольников:<p id = "result5"></p>
+        <canvas id='canvas_example5' width = "400px" height = "200px" style = "border:solid 2px black; width: 100%;">
+        </canvas>
+<br>
+<br>
+      </div>
+    </div>
+    </div>  
+<script src="kyrsa4.js"></script>
+</body>
+</html>
+
+
+ 
